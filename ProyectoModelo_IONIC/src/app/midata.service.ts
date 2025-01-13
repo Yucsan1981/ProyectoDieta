@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MidataService {
+
+
+  private sharedData: any;
+
+
+  constructor() { }
+
+
+  setData(data: any): void {
+
+    this.sharedData = data;
+ 
+  }
+ 
+ 
+ 
+  getData(): any {
+ 
+    return this.sharedData;
+ 
+  }
+
+
+  
+}

@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Proyecto MODELO IONIC FER 12/01/2025 header Android
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Proyecto MODELO IONIC FER 12/01/2025 header OS apple</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <!-- BOTONERA -->
+  <h1>Botonera Navegación </h1>
+  <ion-button routerLink="/busca" routerDirection="back" >Página Buscador</ion-button>
+  <ion-button routerLink="/busca" routerDirection="forward">Ir a la página 2</ion-button>
+  <ion-button (click)="goToBusca()" routerDirection="forward">Navegar Función</ion-button>
+
+  <ion-button (click)="goTolistadoJson()" >listadoJson</ion-button> <!-- Envía datos por json -->
+
+  <ion-button (click)="goToListaServicio()" routerDirection="forward">Navega dataService</ion-button>
+
+  <ion-button expand="block" routerLink="/ejemploalerta" >Página Alerta1</ion-button>
+
+
+
+  <h2>Listado Clase crea - borra - modifica</h2>
+  <div class="ion-padding"> <!-- ion padding margen alrededor del div  -->
+
+    <ion-input type="string" [(ngModel)]="nombreNuevo" placeholder="Introduce nueva tarea"></ion-input>
+    <ion-input type="number" min="1" [(ngModel)]="calorias" placeholder="Introduce nueva cantidad"></ion-input>
+
+    <ion-button expand="block" (click)="agregarDieta()">Agregar Componente</ion-button>
+
+
+    <ion-list>
+      <ion-item *ngFor="let cd of listado; let i=index">
+       nombre: {{ cd.nombre }} calorias: {{cd.calorias}} 
+       <ion-button expand="block" color="danger" (click)="borrarDieta(i)">borrarDieta</ion-button>
+       <ion-button expand="block" color="primary" (click)="editarDieta(i)">editarDieta</ion-button>
+      </ion-item>
+    </ion-list>
+
+
+    <!-- <p>El número secreto es {{ mayorMenor }} {{ num }}</p> -->
+
+  </div>
+  
+</ion-content>

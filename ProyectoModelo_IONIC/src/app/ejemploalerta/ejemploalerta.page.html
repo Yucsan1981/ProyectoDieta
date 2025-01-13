@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ejemploalerta</ion-title>
+
+    <!-- BACK BUTTON -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+     </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let cd of listado; let i=index" (click)="alertaModifica(i)">
+     nombre: {{ cd.nombre }} calorias: {{cd.calorias}} 
+     
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>
